@@ -30,5 +30,6 @@ footer{
         justify-content: center;
         padding: 0;
         padding-bottom: 40px;
+        gap: 35px;
     }
 }
