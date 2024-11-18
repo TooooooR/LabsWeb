@@ -1,0 +1,35 @@
+import ClipLoader from "react-spinners/ClipLoader";
+
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+    }, 200)
+  }, [])
+
+
+      { loading? <ClipLoader
+        color={'red'}
+        loading={loading}
+        size={150}
+        aria-label="Loading Spinner"
+        data-testid="loader"
+      />: <>
+            <SearchAndSortSection 
+        searchValue={searchValue}
+        setSearchValue={setSearchValue}
+        handleSortDecreasePrice={handleSortDecreasePrice}
+        handleSortIncreasePrice={handleSortIncreasePrice}
+        handleReset={handleReset}
+        handleSortIncreaseHeight={handleSortIncreaseHeight}
+        handleSortDecreaseHeight={handleSortDecreaseHeight}
+      />
+
+      <Catalog trees={visibleFilteredTrees} />
+
+      {visibleTrees < filteredTrees.length && (
+        <ButtonViewMore name='Show' onClick={handleViewMore} />
+      )}
+      </>}
